@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE generatorConfiguration        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<classPathEntry
+		location="D:\CloudServer\TaiShiGenerator\src\mybatis.generator\lib\mysql-connector-java-5.1.46.jar" />
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<!-- 配置数据源 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.11.248:3306/taishi" userId="zytm"
+			password="zytm">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- 配置生成的javabean所存放的路径和包（使用绝对路径） -->
+		<javaModelGenerator
+			targetPackage="com.mybatisgen.bean"
+			targetProject="D:\CloudServer\TaiShiGenerator\src\mybatis.generator\src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<!-- 配置生成的**Mapper.xml文件所存放的路径和包（使用绝对路径） -->
+		<sqlMapGenerator targetPackage="mapper"
+			targetProject="D:\CloudServer\TaiShiGenerator\src\mybatis.generator\src\\main\resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!-- 配置生成的**Mapper.java接口文件所存放的路径和包（使用绝对路径） -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.mybatisgen.mapper"
+			targetProject="D:\CloudServer\TaiShiGenerator\src\mybatis.generator\src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!-- 指定我们要操作的表明和生成的javabean类名 -->
+		<table tableName="zytm_taishi_fixstationinfo"
+			domainObjectName="FixStation"></table>
+	</context>
+</generatorConfiguration>
